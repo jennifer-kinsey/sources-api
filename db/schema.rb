@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818203921) do
+ActiveRecord::Schema.define(version: 20170818215046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20170818203921) do
     t.integer "category"
     t.integer "code"
     t.string "content_type"
-    t.string "created"
     t.decimal "credits"
     t.string "description"
     t.boolean "disable_datetime"
@@ -35,7 +34,6 @@ ActiveRecord::Schema.define(version: 20170818203921) do
     t.integer "size"
     t.string "tags", default: [], array: true
     t.integer "type"
-    t.string "updated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
