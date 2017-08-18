@@ -12,17 +12,24 @@ class SourcesController < ApplicationController
 
   def create
     @source =Source.create(source_params)
-    json_response(@source)
+    json_response(@source, :created)
   end
 
   def update
     @source =Source.find(params[:id])
-    @source.update(source_params)
+    if @source.update!(source_params)
+      render status: 200, json: {
+        message: "Your source has successfully been updated."
+      }
+    end
   end
 
   def destroy
     @source =Source.find(params[:id])
-    @source.destroy
+    if @source.destroy
+      render status: 200, json: {
+        message: "Your source has been deleted."
+      }
   end
 
   private
@@ -51,7 +58,7 @@ class SourcesController < ApplicationController
       :size,
       :tags,
       :type,
-      :updated
+      :updated,
     )
   end
 end
