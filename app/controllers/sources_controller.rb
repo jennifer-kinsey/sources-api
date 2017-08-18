@@ -30,6 +30,7 @@ class SourcesController < ApplicationController
       render status: 200, json: {
         message: "Your source has been deleted."
       }
+    end
   end
 
   private
